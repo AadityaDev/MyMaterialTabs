@@ -1,0 +1,155 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:windowActionBar="false"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!--Action bar setup-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tabanum_toolbar"
+            android:background="#E0E0E0"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ToolbarTheme"
+            >
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp" />
+
+            <TextView
+                android:textColor="#8BC34A"
+                android:gravity="left|center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:text="Choose Contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </android.support.v7.widget.Toolbar>
+        <!--app:layout_scrollFlags="scroll|enterAlways"-->
+
+        <!--android:background="?attr/colorPrimary"-->
+
+        <!--Tab view-->
+        <android.support.design.widget.TabLayout
+
+            android:id="@+id/tabanim_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/search_toolbar"
+            android:background="#F5F5F5"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#212121"
+                    android:id="@+id/hinttext"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:text="@string/text_hint"
+                    ></TextView>
+
+                <RelativeLayout
+                    android:id="@+id/mid"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/hinttext"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                <TextView
+                    android:gravity="center"
+                    android:id="@+id/selected_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#8BC34A"
+                    android:text="@string/text_selected"
+                    android:layout_alignBottom="@+id/addall_check"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"></TextView>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:textColorHint="#212121"
+                    android:hint="@string/add_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/addall_check"
+                    android:layout_toStartOf="@+id/addall_check" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/addall_check"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.SwitchCompat>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <FrameLayout
+            android:id="@+id/frag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </FrameLayout>
+        <!-- -->
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:layout_gravity="end|fill"-->
+            <!--android:layout_marginTop="@+id/frag"-->
+            <!--android:background="#424242"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"></android.support.v7.widget.Toolbar>-->
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!--scrolling behaviour-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/tabanim_viewpager"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <fragment
+        android:id="@+id/fra"
+        android:layout="@layout/fragment_refer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></fragment>
+</android.support.design.widget.CoordinatorLayout>
